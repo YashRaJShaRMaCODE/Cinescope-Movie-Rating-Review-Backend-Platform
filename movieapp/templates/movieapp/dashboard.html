@@ -1,0 +1,21 @@
+{% extends 'movieapp/base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Welcome, {{ user.username }}</h2>
+    <p>Email: {{ user.email }}</p>
+
+    <h4 class="mt-4">Your Reviews</h4>
+    {% if reviews %}
+        <ul class="list-group">
+            {% for review in reviews %}
+                <li class="list-group-item">
+                    <strong>{{ review.movie.title }}</strong>:
+                    {{ review.comment }} ({{ review.rating }}/5)
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You haven't submitted any reviews yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

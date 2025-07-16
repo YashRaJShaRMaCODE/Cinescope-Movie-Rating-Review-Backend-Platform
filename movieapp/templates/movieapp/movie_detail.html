@@ -1,0 +1,57 @@
+{% extends 'movieapp/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>{{ movie.title }}</h1>
+    <p><strong>Average Rating:</strong> {{ avg_rating }}/5</p>
+
+    <p>{{ movie.description }}</p>
+    <p><strong>Genre:</strong> {{ movie.genre }}</p>
+    <p><strong>Release Year:</strong> {{ movie.release_year }}</p>
+
+    <hr>
+
+    <h3>Reviews:</h3>
+    {% if reviews %}
+        <ul class="list-group mb-3">
+            {% for review in reviews %}
+                <li class="list-group-item">
+                    <strong>{{ review.user.username }}</strong>: {{ review.comment }}
+                    <span class="text-muted">({{ review.rating }}/5)</span>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No reviews yet.</p>
+    {% endif %}
+
+    <hr>
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+  {% endfor %}
+{% endif %}
+{% if user.is_authenticated %}
+  <!-- Show review form -->
+{% else %}
+  <p><a href="{% url 'login' %}">Login</a> to leave a review.</p>
+{% endif %}
+
+    {% if user.is_authenticated %}
+        <h5>Add a Review</h5>
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-2">
+                <textarea name="comment" class="form-control" placeholder="Your review" required></textarea>
+            </div>
+            <div class="mb-2">
+                <input type="number" name="rating" min="1" max="5" class="form-control" placeholder="Rating (1-5)" required>
+            </div>
+            <button class="btn btn-primary">Submit</button>
+        </form>
+    {% else %}
+        <p><a href="{% url 'login' %}">Log in</a> to post a review.</p>
+    {% endif %}
+</div>
+{% endblock %}
+
