@@ -1,7 +1,7 @@
 from django.contrib import admin
-from django.urls import path, include  # add include
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('movieapp.urls')),  # route homepage to movieapp
+    path('', include('movieapp.urls')),
 ]

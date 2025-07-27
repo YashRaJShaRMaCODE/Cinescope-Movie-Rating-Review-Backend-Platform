@@ -1,21 +1,25 @@
 {% extends 'movieapp/base.html' %}
+
 {% block content %}
 <div class="container mt-4">
     <h2>Welcome, {{ user.username }}</h2>
-    <p>Email: {{ user.email }}</p>
+    <h5>Email: {{ user.email }}</h5>
 
-    <h4 class="mt-4">Your Reviews</h4>
+    <hr>
+
+    <h4>Your Reviews</h4>
     {% if reviews %}
-        <ul class="list-group">
-            {% for review in reviews %}
-                <li class="list-group-item">
-                    <strong>{{ review.movie.title }}</strong>:
-                    {{ review.comment }} ({{ review.rating }}/5)
-                </li>
-            {% endfor %}
-        </ul>
+        {% for review in reviews %}
+            <div class="border p-3 mb-2 rounded">
+                <strong>{{ review.movie.title }}</strong>: {{ review.comment }} ({{ review.rating }}/5)
+                <form method="post" action="{% url 'delete_review' review.id %}" style="display:inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                </form>
+            </div>
+        {% endfor %}
     {% else %}
-        <p>You haven't submitted any reviews yet.</p>
+        <p>You haven't posted any reviews yet.</p>
     {% endif %}
 </div>
 {% endblock %}
