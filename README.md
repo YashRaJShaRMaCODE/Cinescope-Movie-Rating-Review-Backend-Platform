@@ -51,16 +51,24 @@ This structure ensures maintainability and scalability of the application.
 ## 📂 Project Structure
 
 CineScope/
-├── app/
-│ ├── models.py # Database models
-│ ├── views.py # Backend business logic
-│ ├── urls.py # URL routing
-│ └── templates/ # HTML templates
-├── static/ # Static files (CSS, Bootstrap)
-├── manage.py # Django entry point
+├── cinescope/                # Main Django project
+│   ├── settings.py           # Project settings
+│   ├── urls.py               # Main URL routing
+│   ├── wsgi.py
+│   └── asgi.py
+├── movies/                   # Core application
+│   ├── migrations/
+│   ├── models.py             # Database models (Movie, Review, Rating)
+│   ├── views.py              # Backend business logic
+│   ├── urls.py               # App-level routes
+│   ├── admin.py              # Admin panel configuration
+│   └── apps.py
+├── templates/                # HTML templates
+│   └── movies/
+├── static/                   # Static files (CSS, Bootstrap)
+├── manage.py                 # Django entry point
 ├── requirements.txt
 └── README.md
-
 
 ---
 
@@ -94,3 +102,31 @@ CineScope/
 
 6.Open in browser
   http://127.0.0.1:8000/
+
+
+🚀 Future Enhancements
+
+REST API support for frontend/mobile clients
+
+Pagination and caching for performance
+
+Recommendation logic based on user preferences
+
+Admin dashboard for content moderation
+
+🎯 What This Project Demonstrates
+
+Backend software development using Django
+
+Database schema design and ORM usage
+
+Implementation of authentication and authorization
+
+Real-world CRUD-based backend system
+
+Clean code structure and separation of concerns
+
+👨‍💻 Author
+
+Yash R. Sharma
+Backend / Software Development Engineer (SDE – Fresher)
