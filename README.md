@@ -103,7 +103,7 @@ python manage.py migrate
 6.Open in browser
   http://127.0.0.1:8000/
 
-
+---
 
 
 🚀 Future Enhancements
@@ -116,7 +116,7 @@ Recommendation logic based on user preferences
 
 Admin dashboard for content moderation
 
-
+---
 
 🎯 What This Project Demonstrates
 
@@ -130,7 +130,7 @@ Real-world CRUD-based backend system
 
 Clean code structure and separation of concerns
 
-
+---
 
 👨‍💻 Author
 
