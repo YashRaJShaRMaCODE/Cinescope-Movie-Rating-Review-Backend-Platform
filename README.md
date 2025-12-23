@@ -104,6 +104,8 @@ python manage.py migrate
   http://127.0.0.1:8000/
 
 
+
+
 🚀 Future Enhancements
 
 REST API support for frontend/mobile clients
@@ -113,6 +115,8 @@ Pagination and caching for performance
 Recommendation logic based on user preferences
 
 Admin dashboard for content moderation
+
+
 
 🎯 What This Project Demonstrates
 
@@ -125,6 +129,8 @@ Implementation of authentication and authorization
 Real-world CRUD-based backend system
 
 Clean code structure and separation of concerns
+
+
 
 👨‍💻 Author
 
