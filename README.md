@@ -48,29 +48,29 @@ This structure ensures maintainability and scalability of the application.
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
+```
 CineScope/
-├── cinescope/                # Main Django project
-│   ├── settings.py           # Project settings
-│   ├── urls.py               # Main URL routing
+├── cinescope/
+│   ├── settings.py
+│   ├── urls.py
 │   ├── wsgi.py
 │   └── asgi.py
-├── movies/                   # Core application
+├── movies/
 │   ├── migrations/
-│   ├── models.py             # Database models (Movie, Review, Rating)
-│   ├── views.py              # Backend business logic
-│   ├── urls.py               # App-level routes
-│   ├── admin.py              # Admin panel configuration
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   ├── admin.py
 │   └── apps.py
-├── templates/                # HTML templates
+├── templates/
 │   └── movies/
-├── static/                   # Static files (CSS, Bootstrap)
-├── manage.py                 # Django entry point
+├── static/
+├── manage.py
 ├── requirements.txt
 └── README.md
-
----
+```
 
 ## 🛠️ Tech Stack
 
@@ -90,12 +90,12 @@ CineScope/
    git clone <repository-link>
    cd CineScope
 2. Install dependencies
-  pip install -r requirements.txt
+   pip install -r requirements.txt
 
 3. Configure database settings in settings.py
 
 4.Apply migrations
-   python manage.py migrate
+python manage.py migrate
 
 5.Start the server
   python manage.py runserver
